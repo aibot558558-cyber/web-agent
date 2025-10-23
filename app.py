@@ -3,8 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 app = FastAPI()
 
-# Load model and tokenizer at startup
-model_name = "Qwen/Qwen2-1B"
+model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 generator = pipeline("text-generation", model=model, tokenizer=tokenizer, max_new_tokens=128)
