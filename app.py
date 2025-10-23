@@ -4,7 +4,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 app = FastAPI()
 
 # Load model and tokenizer at startup
-model_name = "microsoft/phi-2"
+model_name = "Qwen/Qwen2-1B"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 generator = pipeline("text-generation", model=model, tokenizer=tokenizer, max_new_tokens=128)
